@@ -7,7 +7,7 @@ transition: slide-left
 mdc: true
 fonts:
   sans: 'Xiaolai SC'
-  mono: 'Xiaolai Mono SC'
+  mono: 'Xiaolai SC'
 
 hideInToc: true
 class: text-center
@@ -17,9 +17,32 @@ class: text-center
 
 如何在重复的博弈中获胜
 
-<HomeButton />
+<script lang="ts" setup>
+import { ArrowRight, Github, PencilLine } from 'lucide'
+import { RButton, RIcon, RLink, RSpace } from 'roughness'
+</script>
 
-<HomeFooter />
+<style>
+.slidev-layout a {
+  border-bottom: none;
+}
+</style>
+
+<RButton @click="$slidev.nav.next">
+  <RSpace align="center">
+    <slot>开始</slot>
+    <RIcon :icon="ArrowRight" />
+  </RSpace>
+</RButton>
+
+<RSpace class="abs-br m-6">
+  <RLink @click="$slidev.nav.openInEditor()">
+    <RIcon :icon="PencilLine" />
+  </RLink>
+  <RLink href="https://github.com/CyanSalt/slides" target="_blank">
+    <RIcon :icon="Github" />
+  </RLink>
+</RSpace>
 
 <!--
 
@@ -1236,9 +1259,86 @@ layout: statement
 
 # 谢谢！
 
+<script lang="ts" setup>
+import type { RoughSVG } from 'roughjs/bin/svg'
+import { RGraphics } from 'roughness'
+
+function drawSlidev(rc: RoughSVG, svg: SVGSVGElement) {
+  const square = rc.rectangle(14, 14, 90, 90, {
+    stroke: '#2988B1',
+    fill: '#3ACBD4',
+  })
+  svg.appendChild(square)
+  const circle = rc.circle(45, 45, 90, {
+    stroke: '#3AB9D5',
+    fill: '#95F0CF',
+  })
+  svg.appendChild(circle)
+  const triangle = rc.path('M56.127 63.925C54.9501 59.5327 54.3617 57.3366 54.9439 55.8199C55.4517 54.497 56.497 53.4517 57.8199 52.9439C59.3366 52.3617 61.5327 52.9501 65.925 54.127L87.7563 59.9767C92.1485 61.1536 94.3446 61.742 95.367 63.0046C96.2588 64.1058 96.6414 65.5338 96.4197 66.9334C96.1656 68.5379 94.5579 70.1456 91.3426 73.3609L75.3609 89.3426C72.1456 92.5579 70.5379 94.1656 68.9333 94.4197C67.5337 94.6414 66.1058 94.2588 65.0046 93.367C63.742 92.3446 63.1536 90.1485 61.9767 85.7563L56.127 63.925Z', {
+    stroke: '#FFA800',
+    fill: '#FFEB83',
+  })
+  svg.appendChild(triangle)
+}
+
+function drawVercel(rc: RoughSVG, svg: SVGSVGElement) {
+  const path = rc.path('M8 1L16 15H0L8 1Z', {
+    stroke: 'currentColor',
+    fill: 'currentColor',
+  })
+  svg.appendChild(path)
+}
+</script>
+
 <br>
 
 全文参阅 [《谈谈博弈论：如何在重复的博弈中获胜》](https://bytedance.larkoffice.com/docx/Fs90dE0KOoUf1lx0uFScc0EYnJQ)
+
+<style>
+.powered-by a {
+  border-bottom: none;
+}
+.powered-by a:hover {
+  color: inherit;
+}
+</style>
+
+<div class="powered-by mx-auto flex gap-4 items-center w-1/4">
+
+<a class="flex-1" href="https://roughness.vercel.app/" target="_blank">
+<LightOrDark>
+  <template #dark>
+  <p class="mx-auto w-2/5">
+
+  ![Roughness](https://roughness.vercel.app/r-dark.svg)
+
+  </p>
+  </template>
+  <template #light>
+  <p class="mx-auto w-2/5">
+
+  ![Roughness](https://roughness.vercel.app/r.svg)
+
+  </p>
+  </template>
+</LightOrDark>
+</a>
+
+<a class="flex-1" href="https://sli.dev/" target="_blank">
+<p class="mx-auto w-4/5">
+
+![Slidev](https://raw.githubusercontent.com/slidevjs/slidev/179a313fad91d952eddc33cb0c0bfb00f1a4474c/assets/logo.svg)
+
+</p>
+</a>
+
+<a class="flex-1" href="https://vercel.com/" target="_blank">
+<svg class="mx-auto w-1/2" viewBox="0 0 76 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="currentColor"/>
+</svg>
+</a>
+
+</div>
 
 ---
 routeAlias: pirate-game

@@ -18,8 +18,8 @@ dependencies:
     specifier: ^0.363.0
     version: 0.363.0
   roughness:
-    specifier: 0.1.0-beta.16
-    version: 0.1.0-beta.16(vue@3.4.21)
+    specifier: 0.1.0-beta.19
+    version: 0.1.0-beta.19(vue@3.4.21)
   vue:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.4.3)
@@ -4512,8 +4512,8 @@ packages:
       points-on-path: 0.2.1
     dev: false
 
-  /roughness@0.1.0-beta.16(vue@3.4.21):
-    resolution: {integrity: sha512-XNTszQaRQ46Lq2v2I//If/S8DT77RBTpRMpYS6EosPUHJUb8D2Uk9gN+V1ME9tfZG2Nu4fqeEs1xq6EyEDZt3A==}
+  /roughness@0.1.0-beta.19(vue@3.4.21):
+    resolution: {integrity: sha512-3ZdYq9kwFJA5a4BZBfgXkqzHGXak8QevNPbhqqfqOPMgZYEGQT1Ee0n9iaWpCVtim6uocTIVE0xnwqkDPNz5Qw==}
     peerDependencies:
       vue: '>=3.3.0'
     dependencies:

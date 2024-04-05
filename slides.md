@@ -22,12 +22,6 @@ import { ArrowRight, Github, PencilLine } from 'lucide'
 import { RButton, RIcon, RLink, RSpace } from 'roughness'
 </script>
 
-<style>
-.slidev-layout a {
-  border-bottom: none;
-}
-</style>
-
 <RButton @click="$slidev.nav.next">
   <RSpace align="center">
     <slot>开始</slot>
@@ -39,7 +33,7 @@ import { RButton, RIcon, RLink, RSpace } from 'roughness'
   <RLink @click="$slidev.nav.openInEditor()">
     <RIcon :icon="PencilLine" />
   </RLink>
-  <RLink href="https://github.com/CyanSalt/slides" target="_blank">
+  <RLink href="https://github.com/CyanSalt/slides/blob/main/slides.md?plain=1" target="_blank">
     <RIcon :icon="Github" />
   </RLink>
 </RSpace>
@@ -1260,8 +1254,9 @@ layout: statement
 # 谢谢！
 
 <script lang="ts" setup>
+import { Github } from 'lucide'
 import type { RoughSVG } from 'roughjs/bin/svg'
-import { RGraphics } from 'roughness'
+import { RGraphics, RIcon, RLink } from 'roughness'
 
 function drawSlidev(rc: RoughSVG, svg: SVGSVGElement) {
   const square = rc.rectangle(14, 14, 90, 90, {
@@ -1293,6 +1288,9 @@ function drawVercel(rc: RoughSVG, svg: SVGSVGElement) {
 <br>
 
 全文参阅 [《谈谈博弈论：如何在重复的博弈中获胜》](https://bytedance.larkoffice.com/docx/Fs90dE0KOoUf1lx0uFScc0EYnJQ)
+
+<br>
+<br>
 
 <style>
 .powered-by a {
@@ -1332,6 +1330,10 @@ function drawVercel(rc: RoughSVG, svg: SVGSVGElement) {
 </p>
 </a>
 
+<a class="flex-1 leading-none text-sm" href="https://github.com/lxgw/kose-font/" target="_blank">
+小赖<br>字体
+</a>
+
 <a class="flex-1" href="https://vercel.com/" target="_blank">
 <svg class="mx-auto w-1/2" viewBox="0 0 76 65" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="currentColor"/>
@@ -1339,6 +1341,12 @@ function drawVercel(rc: RoughSVG, svg: SVGSVGElement) {
 </a>
 
 </div>
+
+<br>
+
+<RLink href="https://github.com/CyanSalt/slides/blob/main/slides.md?plain=1" target="_blank">
+  <RIcon :icon="Github" />
+</RLink>
 
 ---
 routeAlias: pirate-game

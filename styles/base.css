@@ -1,3 +1,7 @@
 :root {
   --r-common-font-family: 'Xiaolai SC';
 }
+
+.slidev-layout a.r-link {
+  border-bottom: none;
+}
